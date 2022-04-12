@@ -1,6 +1,9 @@
 package io.amigos.beans;
 
+import io.amigos.factory.YamlPropertySourceFactory;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.PropertySources;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
@@ -8,6 +11,9 @@ import java.util.Date;
 
 @Component
 @ConfigurationProperties(prefix = "passport")
+/*@PropertySources(
+        @PropertySource(name = "passport", value="classpath:app-global.yml", factory = YamlPropertySourceFactory.class)
+)*/
 public class Passport {
 
     private int passportId;
